@@ -10,7 +10,7 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
-
+    
     var ball = SKShapeNode()
     var paddle = SKSpriteNode()
     var brick = SKSpriteNode()
@@ -26,7 +26,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         makeLoseZone()
         ball.physicsBody?.isDynamic = true
         ball.physicsBody?.applyImpulse(CGVector(dx: 3, dy: 5))
-        }
+    }
     
     func createBackground() {
         let stars = SKTexture(imageNamed: "stars")
@@ -111,7 +111,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             paddle.position.x = location.x
         }
     }
-   
+    
     func didBegin(_ contact: SKPhysicsContact) {
         if contact.bodyA.node?.name == "brick" ||
             contact.bodyB.node?.name == "brick" {
